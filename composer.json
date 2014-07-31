@@ -1,5 +1,5 @@
 {
-	"name": "component/feedback-form",
+	"name": "boundstate/feedback-form",
 	"description": "JavaScript library for embedding feedback forms in webpages",
 	"type": "component",
 	"authors": [
