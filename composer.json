@@ -1,0 +1,28 @@
+{
+	"name": "component/feedback-form",
+	"description": "JavaScript library for embedding feedback forms in webpages",
+	"type": "component",
+	"authors": [
+		{
+			"name": "Bound State Software",
+			"email": "info@boundstatesoftware.com"
+		}
+	],
+  "require": {
+    "robloach/component-installer": "*"
+  },
+  "extra": {
+    "component": {
+      "scripts": [
+        "dist/feedback-form.js"
+      ],
+      "styles": [
+        "dist/feedback-form.css"
+      ],
+      "files": [
+        "dist/feedback-form.min.js",
+        "dist/feedback-form.min.css"
+      ]
+    }
+  }
+}

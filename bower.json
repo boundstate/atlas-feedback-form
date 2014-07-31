@@ -1,0 +1,10 @@
+{
+  "name": "feedback-form",
+  "version": "0.0.1",
+  "ignore": [
+    "**/.*",
+    "demo",
+    "package.json",
+    "Gruntfile.js"
+  ]
+}
