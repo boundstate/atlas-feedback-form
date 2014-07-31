@@ -52,6 +52,7 @@
     right: 0;
     margin: 10px 10px 70px;
     padding: 2px;
+    background-color: #fff;
     border-radius: 4px;
     box-shadow: 0 0 60px rgba(0,0,0,0.4);
 }
@@ -75,12 +76,12 @@
 
 .feedback-form-popup-close-btn {
     position:absolute;
-    right: 10px;
-    top: 6px;
+    right: 15px;
+    top: 15px;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 31px;
     font-weight: 700;
-    line-height: 1;
+    line-height: 25px;
     color: #000;
     text-shadow: 0 1px 0 #fff;
     opacity: 0.2;
@@ -89,6 +90,8 @@
 
 .feedback-form-popup-close-btn:hover {
     opacity: 1.0;
+    color: #000;
+    text-decoration: none;
 }
 
 .feedback-form-popup iframe {
