@@ -99,3 +99,10 @@
     width: 300px;
     border: 0;
 }
+
+@media print {
+    .feedback-form-btn,
+    .feedback-form-popup {
+        display: none !important;
+    }
+}

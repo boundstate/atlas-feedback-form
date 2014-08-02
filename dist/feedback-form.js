@@ -1,5 +1,5 @@
 /**
- * feedback-form - v0.0.1 - 2014-07-31
+ * feedback-form - v0.0.2 - 2014-08-01
  *
  * Copyright (c) 2014 Bound State Software
  */
