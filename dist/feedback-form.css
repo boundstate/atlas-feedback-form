@@ -1,8 +1,12 @@
 /**
- * feedback-form - v0.0.2 - 2014-08-01
+ * feedback-form - v0.0.3 - 2014-08-01
  *
  * Copyright (c) 2014 Bound State Software
  */
+
+.feedback-form {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
 .feedback-form-btn {
     position: fixed;
@@ -50,21 +54,66 @@
     border-color: #fff transparent;
 }
 
+.feedback-form-tooltip {
+    position: fixed;
+    z-index: 99998;
+    bottom:-10px;
+    right: 65px;
+    margin:0 0 10px;
+    height: 40px;
+    line-height:40px;
+    padding: 0 10px;
+    background-color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 4px;
+    box-shadow: 0 0 50px rgba(0,0,0,0.3);
+    opacity: 0;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    color: #444;
+}
+.feedback-form-tooltip-active {
+    opacity: 1;
+    bottom:0;
+}
+
+.feedback-form-tooltip:after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 10px;
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-left: 10px solid #fff;
+    border-bottom: 10px solid transparent;
+}
+
 .feedback-form-popup {
     position: fixed;
     z-index: 999998;
-    display: none;
-    bottom: 0;
+    bottom: -10px;
     right: 0;
+    width: 300px;
     margin: 10px 10px 70px;
     padding: 2px;
     background-color: #fff;
     border-radius: 4px;
     box-shadow: 0 0 60px rgba(0,0,0,0.4);
-}
+    opacity: 0;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 
-.feedback-form-popup.feedback-form-popup-active {
-    display: block;
+}
+.feedback-form-popup-active {
+    opacity: 1;
+    bottom: 0;
 }
 
 .feedback-form-popup:after {
@@ -84,7 +133,6 @@
     position:absolute;
     right: 15px;
     top: 15px;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 31px;
     font-weight: 700;
     line-height: 25px;
@@ -102,13 +150,11 @@
 
 .feedback-form-popup iframe {
     display: block;
-    width: 300px;
     border: 0;
 }
 
 @media print {
-    .feedback-form-btn,
-    .feedback-form-popup {
+    .feedback-form {
         display: none !important;
     }
 }
