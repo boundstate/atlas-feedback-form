@@ -43,3 +43,7 @@ function addEventListener(el, eventName, handler) {
 function outerHTML(el){
   return el.outerHTML || new XMLSerializer().serializeToString(el);
 }
+
+function removeElement(el){
+  el.parentNode.removeChild(el);
+}

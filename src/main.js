@@ -2,6 +2,7 @@ window.FeedbackForm = {
   embed: function(options) {
     // Load CSS
     var link = document.createElement('link');
+    link.id = 'feedback-form-stylesheet';
     link.rel = 'stylesheet';
     link.type = 'text/css';
     link.media = 'screen,print';
@@ -10,6 +11,7 @@ window.FeedbackForm = {
 
     // Create wrapper
     var wrapper = document.createElement('div');
+    wrapper.id = 'feedback-form';
     addClass(wrapper, 'feedback-form');
     document.body.appendChild(wrapper);
 
@@ -93,12 +95,20 @@ window.FeedbackForm = {
       userAgent: navigator.userAgent,
       window: {
         width: window.innerWidth || document.body.clientWidth,
-        height: window.innerHeight || document.body.clientHeight
+        height: window.innerHeight || document.body.clientHeight,
+        xOffset: window.pageXOffset || document.documentElement.scrollTop,
+        yOffset: window.pageYOffset || document.documentElement.scrollLeft
       }
     };
   },
 
   getDocumentHTML: function () {
-    return outerHTML(document.documentElement);
+    var el = document.cloneNode(true);
+
+    // Remove feedback form from HTML
+    removeElement(el.getElementById('feedback-form-stylesheet'));
+    removeElement(el.getElementById('feedback-form'));
+
+    return outerHTML(el.documentElement);
   }
 };
