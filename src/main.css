@@ -143,6 +143,7 @@
 
 .feedback-form-popup iframe {
     display: block;
+    box-sizing: content-box;
     border: 0;
 }
 
