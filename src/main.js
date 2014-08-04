@@ -87,6 +87,17 @@ window.FeedbackForm = {
     });
   },
 
+  getClientInfo: function() {
+    return {
+      userAgent: navigator.userAgent,
+      platform: navigator.platform,
+      window: {
+        width: window.innerWidth || document.body.clientWidth,
+        height: window.innerHeight || document.body.clientHeight
+      }
+    };
+  },
+
   getDocumentHTML: function () {
     return outerHTML(document.documentElement);
   }
