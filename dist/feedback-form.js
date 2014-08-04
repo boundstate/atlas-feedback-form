@@ -1,5 +1,5 @@
 /**
- * feedback-form - v0.0.3 - 2014-08-01
+ * feedback-form - v0.0.3 - 2014-08-03
  *
  * Copyright (c) 2014 Bound State Software
  */
@@ -92,6 +92,10 @@ window.FeedbackForm = {
     addEventListener(closeBtn, 'click', function () {
       hidePopup();
     });
+  },
+
+  getDocumentHTML: function () {
+    return outerHTML(document.documentElement);
   }
 };
 function addClass(el, className) {
@@ -134,4 +138,8 @@ function addEventListener(el, eventName, handler) {
       handler.call(el);
     });
   }
+}
+
+function outerHTML(el){
+  return el.outerHTML || new XMLSerializer().serializeToString(el);
 }})(window);

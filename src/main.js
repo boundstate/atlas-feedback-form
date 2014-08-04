@@ -85,5 +85,9 @@ window.FeedbackForm = {
     addEventListener(closeBtn, 'click', function () {
       hidePopup();
     });
+  },
+
+  getDocumentHTML: function () {
+    return outerHTML(document.documentElement);
   }
 };
