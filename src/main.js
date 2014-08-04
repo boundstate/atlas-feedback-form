@@ -87,6 +87,22 @@ window.FeedbackForm = {
     addEventListener(closeBtn, 'click', function () {
       hidePopup();
     });
+
+    var origin = options.url.match(/^(https?\:\/\/[^\/?#]+)/i)[1];
+    var self = this;
+    addEventListener(window, 'message', function(event) {
+      if (event.origin !== origin) {
+        return;
+      }
+
+      if (event.data.request = 'getClientInfo') {
+        var response = self.getClientInfo();
+        if (typeof event.data.screenshot !== 'undefined' && event.data.screenshot) {
+          response.documentHTML = self.getDocumentHTML();
+        }
+        iframe.contentWindow.postMessage(response, origin);
+      }
+    });
   },
 
   getClientInfo: function() {
