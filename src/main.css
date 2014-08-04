@@ -1,3 +1,7 @@
+.feedback-form,
+.feedback-form * {
+    box-sizing: border-box;
+}
 .feedback-form {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -143,7 +147,7 @@
 
 .feedback-form-popup iframe {
     display: block;
-    box-sizing: content-box;
+    width: 296px;
     border: 0;
 }
 
