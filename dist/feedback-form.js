@@ -119,8 +119,8 @@ window.FeedbackForm = {
       window: {
         width: window.innerWidth || document.body.clientWidth,
         height: window.innerHeight || document.body.clientHeight,
-        xOffset: window.pageXOffset || document.documentElement.scrollTop,
-        yOffset: window.pageYOffset || document.documentElement.scrollLeft
+        xOffset: window.pageXOffset || document.documentElement.scrollLeft,
+        yOffset: window.pageYOffset || document.documentElement.scrollTop
       }
     };
   },
