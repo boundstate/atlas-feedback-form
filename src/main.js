@@ -125,6 +125,6 @@ window.FeedbackForm = {
     removeElement(el.getElementById('feedback-form-stylesheet'));
     removeElement(el.getElementById('feedback-form'));
 
-    return outerHTML(el.documentElement);
+    return getDoctype() + "\n" + outerHTML(el.documentElement);
   }
 };

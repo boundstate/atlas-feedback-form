@@ -44,6 +44,16 @@ function outerHTML(el){
   return el.outerHTML || new XMLSerializer().serializeToString(el);
 }
 
+function getDoctype(){
+  var node = document.doctype;
+  return "<!DOCTYPE " +
+    node.name +
+    (node.publicId ? ' PUBLIC "' + node.publicId + '"' : '') +
+    (!node.publicId && node.systemId ? ' SYSTEM' : '') +
+    (node.systemId ? ' "' + node.systemId + '"' : '') +
+    '>';
+}
+
 function removeElement(el){
   el.parentNode.removeChild(el);
 }

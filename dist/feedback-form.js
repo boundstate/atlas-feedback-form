@@ -1,5 +1,5 @@
 /**
- * feedback-form - v0.0.4 - 2014-08-04
+ * feedback-form - v0.0.5 - 2014-08-07
  *
  * Copyright (c) 2014 Bound State Software
  */
@@ -132,7 +132,7 @@ window.FeedbackForm = {
     removeElement(el.getElementById('feedback-form-stylesheet'));
     removeElement(el.getElementById('feedback-form'));
 
-    return outerHTML(el.documentElement);
+    return getDoctype() + "\n" + outerHTML(el.documentElement);
   }
 };
 function addClass(el, className) {
@@ -179,6 +179,16 @@ function addEventListener(el, eventName, handler) {
 
 function outerHTML(el){
   return el.outerHTML || new XMLSerializer().serializeToString(el);
+}
+
+function getDoctype(){
+  var node = document.doctype;
+  return "<!DOCTYPE " +
+    node.name +
+    (node.publicId ? ' PUBLIC "' + node.publicId + '"' : '') +
+    (!node.publicId && node.systemId ? ' SYSTEM' : '') +
+    (node.systemId ? ' "' + node.systemId + '"' : '') +
+    '>';
 }
 
 function removeElement(el){

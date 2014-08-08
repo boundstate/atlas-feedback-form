@@ -1,7 +1,7 @@
 {
   "name": "feedback-form",
   "author": "Bound State Software",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "scripts": {
     "postinstall": "./node_modules/.bin/bower install",
     "test": "./node_modules/karma/bin/karma start karma.conf.js --single-run"
