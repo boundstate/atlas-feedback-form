@@ -1,5 +1,5 @@
 /**
- * feedback-form - v0.0.5 - 2014-08-07
+ * feedback-form - v0.0.6 - 2014-08-07
  *
  * Copyright (c) 2014 Bound State Software
  */
@@ -128,6 +128,8 @@ window.FeedbackForm = {
   getDocumentHTML: function () {
     var el = document.cloneNode(true);
 
+    captureInputValues(document, el);
+
     // Remove feedback form from HTML
     removeElement(el.getElementById('feedback-form-stylesheet'));
     removeElement(el.getElementById('feedback-form'));
@@ -179,6 +181,33 @@ function addEventListener(el, eventName, handler) {
 
 function outerHTML(el){
   return el.outerHTML || new XMLSerializer().serializeToString(el);
+}
+
+function captureInputValues(source, dest){
+  // Capture <input> values
+  var sourceInputs = source.getElementsByTagName('input');
+  var destInputs = dest.getElementsByTagName('input');
+  for (i=0; i<sourceInputs.length; i++) {
+    if (sourceInputs[i].type == 'checkbox') {
+      // Checkbox values
+      destInputs[i].setAttribute('checked', sourceInputs[i].checked);
+    } else if (sourceInputs[i].type != 'password') {
+      // Other values (ignore passwords)
+      destInputs[i].setAttribute('value', sourceInputs[i].value);
+    }
+  }
+  // Capture <textarea> values
+  var sourceTextareas = source.getElementsByTagName('textarea');
+  var destTextareas = dest.getElementsByTagName('textarea');
+  for (i=0; i<sourceTextareas.length; i++) {
+    destTextareas[i].innerHTML = sourceTextareas[i].value;
+  }
+  // Capture <select> values
+  var sourceSelects = source.getElementsByTagName('select');
+  var destSelects = dest.getElementsByTagName('select');
+  for (i=0; i<sourceSelects.length; i++) {
+    destSelects[i].options[sourceSelects[i].selectedIndex].setAttribute('selected', 'selected');
+  }
 }
 
 function getDoctype(){

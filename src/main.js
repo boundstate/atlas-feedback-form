@@ -121,6 +121,8 @@ window.FeedbackForm = {
   getDocumentHTML: function () {
     var el = document.cloneNode(true);
 
+    captureInputValues(document, el);
+
     // Remove feedback form from HTML
     removeElement(el.getElementById('feedback-form-stylesheet'));
     removeElement(el.getElementById('feedback-form'));
