@@ -3,6 +3,7 @@
     box-sizing: border-box;
 }
 .feedback-form {
+    pointer-events: all !important;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
