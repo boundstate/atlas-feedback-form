@@ -1,13 +1,13 @@
 {
-	"name": "boundstate/feedback-form",
-	"description": "JavaScript library for embedding feedback forms in webpages",
-	"type": "component",
-	"authors": [
-		{
-			"name": "Bound State Software",
-			"email": "info@boundstatesoftware.com"
-		}
-	],
+  "name": "boundstate/atlas-feedback-form",
+  "description": "JavaScript library for embedding feedback forms in webpages",
+  "type": "component",
+  "authors": [
+    {
+      "name": "Bound State Software",
+      "email": "info@boundstatesoftware.com"
+    }
+  ],
   "require": {
     "robloach/component-installer": "*"
   },
